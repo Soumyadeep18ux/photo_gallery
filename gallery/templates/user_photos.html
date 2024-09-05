@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <mate http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title> website with login & Registration </title>
+        <link rel="stylesheet" href="/static/style2.css">
+    </head>
+    <body>
+        <header>
+            
+            <h2 class="logo">PicStore</h2>
+            <form method="GET">
+                <input type="text" name="username" placeholder="Search by username">
+                <button type="submit">Search</button>
+            </form>
+            <nav class="navigation">
+                
+
+                <a href="{% url 'Logout' %}">Logout </a>
+    
+                
+                
+            </nav>
+           <p style="margin-right: 30px; color: white;"> you are logged-in as <strong class="login-name">{{request.user}}</strong></p>
+        </header>
+        <header2>
+           <!-- <h3>{{ user.username }}'s Photos</h3>
+            <form method="GET">
+                <input type="text" name="username" placeholder="Search by username">
+                <button type="submit">Search</button>
+            </form>
+        -->
+        </header2>
+        <h1 class="searchUser">{{ user.username }}'s Photos</h1>
+            {% if photos %}
+                <div class="container">
+                    
+                    <div class="mosaic-container">
+                    {% for photo in photos %}
+                        
+                            <img src="{{ photo.image.url }}" alt="{{ photo.description }}" class="mosaic-item">
+                           <!-- <p>{{ photo.description }}</p>
+                            <p>Uploaded on {{ photo.uploaded_at }}</p>
+                            -->
+                        
+                    {% endfor %}
+                    </div>
+                </div>
+            {% elif error %}
+                <p>{{ error }}</p>
+            {% else %}
+                <p>No photos found.</p>
+            {% endif %}
+
+    </body>
+
+</html>

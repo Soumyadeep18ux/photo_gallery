@@ -1,0 +1,139 @@
+body {
+    
+    justify-content: center;
+    align-items: center;
+    display: fixed;
+    min-height: 100vh;
+    
+    background: url('bg.png') repeat;
+    background-size: cover;
+    background-position: center;
+
+    
+}
+.container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mosaic-container {
+
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2px;
+    
+    
+}
+
+.mosaic-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    
+}
+@media (max-width: 768px) {
+    .mosaic-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+.main {
+    border: #162938;
+    margin-top: 60px;
+    padding: 20px;
+    background: #162938;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    background-color: blueviolet;
+    
+}
+header2 {
+    position: absolute;   
+   top: 50px;
+   left: 0;
+   width: 100%;
+   padding: 20px 20px;
+   display: flex;
+   justify-content: center;
+   
+   z-index: 99;
+}
+.login-name {
+    font-size: larger;
+    text-decoration: underline;
+    color: white;
+}
+.logo {
+    font-size: 2em;
+    color: white;
+    user-select: none;
+}
+.navigation a {
+    position: relative;
+    font-size: 1.25em;
+    font-style: bold;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 450%;
+    
+
+    
+}
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+.navigation .btnlogin-popup {
+    width: 100px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    
+    margin-right: 40px;
+    transition: .5s;
+}
+.navigation .btnlogin-popup:hover {
+    background: black;
+    color: white;
+}
+.searchUser {
+    position: relative;
+    margin-top: 100px;
+    margin-left: 20px;
+    font-style: solid;
+}
