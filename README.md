@@ -9,6 +9,7 @@ Before you can run this project, ensure you have the following installed:
 - Python 3.x
 - Django (version used in this project)
 - Virtualenv (optional but recommended)
+- Pillow
 
 ## Setting Up the Project Locally
 
